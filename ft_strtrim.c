@@ -1,0 +1,111 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: josamba- <josamba-@student.42belgium.      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/07 10:48:06 by josamba-          #+#    #+#             */
+/*   Updated: 2026/04/07 10:48:08 by josamba-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stddef.h>
+#include <stdlib.h>
+
+static size_t	find_occurence(char *s1, char c)
+{
+	size_t	i;
+
+	i = 0;
+	while (s1[i])
+	{
+		if (s1[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+static char	*ft_start_bigger_end(void)
+{
+	char	*trim;
+
+	trim = malloc(sizeof(char));
+	if (!trim)
+		return (NULL);
+	trim[0] = '\0';
+	return (trim);
+}
+
+size_t	ft_strlen(char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	start;
+	size_t	end;
+	size_t	i;
+	char	*trim;
+
+	start = 0;
+	end = 0;
+	i = 0;
+	while (find_occurence((char *)set, s1[i]))
+		i++;
+	start = i;
+	end = ft_strlen((char *)s1);
+	while (end > start && find_occurence((char *)set, s1[end - 1]))
+		end--;
+	if (start > end)
+		return (ft_start_bigger_end());
+	i = 0;
+	trim = malloc(sizeof(char) * (end - start + 1));
+	if (!trim)
+		return (NULL);
+	while (start < end)
+		trim[i++] = s1[start++];
+	trim[i] = '\0';
+	return (trim);
+}
+/*
+#include <stdio.h>
+int main()
+{
+	char *trim;
+	trim = ft_strtrim("!!!Hello###", "!#");
+	printf("%s\n", trim);
+	free(trim);
+
+	char *trim1;
+	trim1 = ft_strtrim("   Hello   ", " ");
+	printf("%s\n", trim1);
+	free(trim1);
+
+	char *trim2;
+	trim2 = ft_strtrim("Hello", "Hello");
+	printf("%s\n", trim2);
+	free(trim2);
+
+	char *trim3;
+	trim3 = ft_strtrim("!!!###", "!#");
+	printf("%s\n", trim3);
+	free(trim3);
+
+	char *trim4;
+	trim4 = ft_strtrim("", "");
+	printf("%s\n", trim4);
+	free(trim4);
+
+	char *trim5;
+	trim5 = ft_strtrim("Hello", "");
+	printf("%s\n", trim5);
+	free(trim5);
+}*/
