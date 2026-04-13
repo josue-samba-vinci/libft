@@ -25,11 +25,11 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	size_t	i;
 
 	i = 0;
-	if (!tab)
-		return (NULL);
+	if (!s)
+		return ;
 	while (s[i])
 	{
-		s[i] = f(i, s[i]);
+		f(i, &s[i]);
 		i++;
 	}
 	return ;

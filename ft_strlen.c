@@ -21,7 +21,7 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
-
+/*
 #include <stdio.h>
 #include <string.h>
 int	main()
@@ -36,4 +36,4 @@ int	main()
 	printf(" %ld", strlen(str));
 	printf("%zu", ft_strlen(str));
 	
-}
+}*/

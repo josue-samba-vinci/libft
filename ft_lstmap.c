@@ -93,10 +93,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	{
 		new_node = ft_lstnew(current->content);
 		if (new_node == NULL)
-			{
-				ft_lstclear(&start, del);
-				return (NULL);
-			}
+		{
+			ft_lstclear(&start, del);
+			return (NULL);
+		}
 		new_node->content = f(current->content);
 		ft_lstadd_back(&start, new_node);
 		current = current->next;
