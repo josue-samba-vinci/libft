@@ -10,27 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
-
-void	ft_bzero(void *s, size_t n)
-{
-	char	*cast;
-
-	cast = (char *)s;
-	while (n > 0)
-	{
-		*cast = '\0';
-		cast++;
-		n--;
-	}
-}
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*tab;
 
-	if (nmemb == 0 || size == 0)
+	if (size != 0 && ((nmemb * size) / size) != nmemb)
 		return (NULL);
 	tab = malloc(nmemb * size);
 	if (!tab)

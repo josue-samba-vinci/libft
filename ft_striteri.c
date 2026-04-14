@@ -10,15 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-/*
-int	ft_toupper(int c)
-{
-	if (c >= 'a' && c <= 'z')
-		c = c - 32;
-	return (c);
-}
-*/
+#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {

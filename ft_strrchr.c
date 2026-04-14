@@ -10,31 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	*found;
-	char	*cast;
+	int				i;
+	unsigned char	*found;
+	unsigned char	*cast;
 
-	cast = (char *)s;
+	cast = (unsigned char *)s;
 	i = 0;
 	found = NULL;
 	if (c == '\0')
 	{
 		while (cast[i])
 			i++;
-		return (&cast[i]);
+		return ((char *)&cast[i]);
 	}
 	i = 0;
 	while (cast[i])
 	{
-		if (cast[i] == c)
+		if (cast[i] == (unsigned char)c)
 			found = &cast[i];
 		i++;
 	}
-	return (found);
+	return ((char *)found);
 }
 /*
 #include <stdio.h>

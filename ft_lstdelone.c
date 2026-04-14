@@ -10,32 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
 #include "libft.h"
-#include <stdlib.h>
-t_list *ft_lstnew(void *content)
-{
-	t_list  *element;
-	element = malloc(sizeof(t_list));
-	if (!element)
-		return NULL;
-	element->content = content; 
-	element->next = NULL;
-	return (element);
-}
-
-void ft_lstadd_front(t_list **lst, t_list *new)
-{
-	new->next = *lst; 
-	*lst = new;
-}
-
-void del(void *content)
-{
-	(void)content;
-}*/
-#include "libft.h"
-#include <stdlib.h>
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {

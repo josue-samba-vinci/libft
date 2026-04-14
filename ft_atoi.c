@@ -10,11 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+#include "libft.h"
+
+int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	nb;
+	int		i;
+	int		sign;
+	long	nb;
 
 	i = 0;
 	sign = 1;
@@ -30,16 +32,17 @@ int	ft_atoi(char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		nb = (nb * 10) + (str[i] - '0');
-		i++;
+		nb = (nb * 10) + (str[i++] - '0');
 	}
-	return (nb * sign);
+	if (nb < 0 && sign == 1)
+		return (-1);
+	if (nb < 0 && sign == -1)
+		return (0);
+	return ((int)nb * sign);
 }
 /*
-#include <stdlib.h>
-#include <stdio.h>
-int 	main(){
-	char *str = NULL;
+int	main(void)
+{
 	printf("%d", ft_atoi("   -42"));
 	printf(" %d\n", atoi("   -42"));
 	printf("%d", ft_atoi("42"));
@@ -62,7 +65,4 @@ int 	main(){
 	printf(" %d\n", atoi("2147483648"));
 	printf("%d", ft_atoi("-2147483649"));
 	printf(" %d\n", atoi("-2147483649"));
-	//mauvais test !!
-	printf("%d", ft_atoi(str));
-	printf(" %d\n", atoi(str));
 }*/

@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
+#include "libft.h"
 
 static size_t	count_words(char *str, char c)
 {
@@ -64,6 +63,8 @@ static void	fill_tab(char *s, char **tab, char c)
 		j = 0;
 		while (s[k] && s[k] == c)
 			k++;
+		if (word_length(s, k, c) == 0)
+			break ;
 		tab[i] = malloc(sizeof(char) *(word_length(s, k, c) + 1));
 		while (s[k] && s[k] != c)
 		{

@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
+#include "libft.h"
 
 static size_t	find_occurence(char *s1, char c)
 {
@@ -36,16 +35,6 @@ static char	*ft_start_bigger_end(void)
 		return (NULL);
 	trim[0] = '\0';
 	return (trim);
-}
-
-size_t	ft_strlen(char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)

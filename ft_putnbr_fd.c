@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -38,8 +37,7 @@ void	ft_putnbr_fd(int n, int fd)
 		n = n / 10;
 	}
 	while (i > 0)
-		write(fd, &tab[i--], 1);
-	write(fd, &tab[i], 1);
+		write(fd, &tab[--i], 1);
 }
 /*
 int main()

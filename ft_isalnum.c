@@ -10,23 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c)
-{
-	unsigned char	cast;
-
-	cast = c;
-	if ((cast >= 'a' && cast <= 'z')
-		|| (cast >= 'A' && cast <= 'Z'))
-		return (1);
-	return (0);
-}
-
-int	ft_isdigit(char c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
+#include "libft.h"
 
 int	ft_isalnum(char c)
 {
