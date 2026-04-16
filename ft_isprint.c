@@ -12,12 +12,9 @@
 
 #include "libft.h"
 
-int	ft_isprint(char c)
+int	ft_isprint(int c)
 {
-	unsigned char	cast;
-
-	cast = c;
-	if (cast >= 32 && cast <= 126)
+	if (c >= 32 && c <= 126)
 		return (1);
 	return (0);
 }

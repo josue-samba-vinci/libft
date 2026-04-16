@@ -21,12 +21,6 @@ char	*ft_strrchr(const char *s, int c)
 	cast = (unsigned char *)s;
 	i = 0;
 	found = NULL;
-	if (c == '\0')
-	{
-		while (cast[i])
-			i++;
-		return ((char *)&cast[i]);
-	}
 	i = 0;
 	while (cast[i])
 	{
@@ -34,6 +28,8 @@ char	*ft_strrchr(const char *s, int c)
 			found = &cast[i];
 		i++;
 	}
+	if (cast[i] == (unsigned char)c)
+		found = &cast[i];
 	return ((char *)found);
 }
 /*

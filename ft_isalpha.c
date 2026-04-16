@@ -12,13 +12,10 @@
 
 #include "libft.h"
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
-	unsigned char	cast;
-
-	cast = c;
-	if ((cast >= 'a' && cast <= 'z')
-		|| (cast >= 'A' && cast <= 'Z'))
+	if ((c >= 'a' && c <= 'z')
+		|| (c >= 'A' && c <= 'Z'))
 		return (1);
 	return (0);
 }

@@ -41,6 +41,7 @@ int	ft_atoi(const char *str)
 	return ((int)nb * sign);
 }
 /*
+#include<stdio.h>
 int	main(void)
 {
 	printf("%d", ft_atoi("   -42"));
@@ -65,4 +66,8 @@ int	main(void)
 	printf(" %d\n", atoi("2147483648"));
 	printf("%d", ft_atoi("-2147483649"));
 	printf(" %d\n", atoi("-2147483649"));
+	printf("%d", ft_atoi("-1111111111111111111111111111111"));
+	printf(" %d\n", atoi("-1111111111111111111111111111111"));
+	printf("%d", ft_atoi("1111111111111111111111111111111"));
+	printf(" %d\n", atoi("1111111111111111111111111111111"));
 }*/

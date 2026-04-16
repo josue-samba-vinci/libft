@@ -30,6 +30,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		substr[0] = '\0';
 		return (substr);
 	}
+	if (len > s_len - start)
+		len = s_len - start;
 	substr = malloc(sizeof(char) * (len + 1));
 	if (!substr)
 		return (NULL);

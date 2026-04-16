@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include <stdint.h>
 
 typedef struct s_list
 {
@@ -25,11 +24,11 @@ typedef struct s_list
 }	t_list;
 
 void	ft_bzero(void *s, size_t n);
-int		ft_isalpha(char c);
-int		ft_isascii(char c);
+int		ft_isalpha(int c);
+int		ft_isascii(int c);
 void	*ft_calloc(size_t nmemb, size_t size);
-int		ft_isdigit(char c);
-int		ft_isprint(char c);
+int		ft_isdigit(int c);
+int		ft_isprint(int c);
 char	*ft_itoa(int n);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
