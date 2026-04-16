@@ -12,7 +12,7 @@ The library is divided into three parts:
 
 **Part 2 — Additional functions:** Utility functions not found in the standard library, or existing in a different form, designed to complement Part 1.
 
-**Part 3 — Linked list:** A set of functions to manipulate singly linked lists using the `t_list` structure.
+**Part 3 — Linked list:** A set of functions to manipulate linked lists using the `t_list` structure.
 
 ### Function reference
 
