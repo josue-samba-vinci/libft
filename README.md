@@ -113,7 +113,3 @@ gcc -Wall -Wextra -Werror your_file.c -L. -lft
 
 - `man` pages for all reimplemented functions (`man strlen`, `man atoi`, etc.)
 - [42 Norm](https://github.com/42School/norminette) — coding standard enforced throughout the project
-
-### AI usage
-
-AI was not used to write or debug any code in this project. Claude was used solely to generate this README file.
