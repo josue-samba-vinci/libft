@@ -49,14 +49,20 @@ static size_t	word_length(char *s, size_t start, char c)
 	return (i);
 }
 
-static void	fill_tab(char *s, char **tab, char c)
+static void	ft_free(char **tab, int i)
+{
+	while (i-- > 0)
+		free(tab[i]);
+	free(tab);
+}
+
+static int	fill_tab(char *s, char **tab, char c)
 {
 	size_t	i;
 	size_t	j;
 	size_t	k;
 
 	i = 0;
-	j = 0;
 	k = 0;
 	while (s[k])
 	{
@@ -66,15 +72,17 @@ static void	fill_tab(char *s, char **tab, char c)
 		if (word_length(s, k, c) == 0)
 			break ;
 		tab[i] = malloc(sizeof(char) *(word_length(s, k, c) + 1));
-		while (s[k] && s[k] != c)
+		if (!tab[i])
 		{
-			tab[i][j] = s[k];
-			j++;
-			k++;
+			ft_free(tab, i);
+			return (0);
 		}
+		while (s[k] && s[k] != c)
+			tab[i][j++] = s[k++];
 		tab[i][j] = '\0';
 		i++;
 	}
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
@@ -89,7 +97,8 @@ char	**ft_split(char const *s, char c)
 	if (!tab)
 		return (NULL);
 	tab[count] = 0;
-	fill_tab((char *)s, tab, c);
+	if (fill_tab((char *)s, tab, c) == 0)
+		return (NULL);
 	return (tab);
 }
 /*
@@ -98,7 +107,7 @@ int main ()
 {
 	char **tab;
 	int i = 0;
-	char *str = "   maman a mange   ";
+	char *str = "hello!";
 	char c = ' ';
 	int count = count_words(str, c);
 	tab = ft_split(str, c);

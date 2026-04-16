@@ -12,7 +12,7 @@ The library is divided into three parts:
 
 **Part 2 — Additional functions:** Utility functions not found in the standard library, or existing in a different form, designed to complement Part 1.
 
-**Part 3 — Linked list:** A set of functions to manipulate linked lists using the `t_list` structure.
+**Part 3 — Linked list:** A set of functions to manipulate singly linked lists using the `t_list` structure.
 
 ### Function reference
 
@@ -95,21 +95,13 @@ This will compile all source files and generate `libft.a` at the root of the rep
 | `make fclean` | Removes object files and `libft.a` |
 | `make re` | Runs `fclean` then `all` |
 
-### Usage
-
-To use the library in another project, include the header and link against the archive:
-
-```c
-#include "libft.h"
-```
-
-```bash
-gcc -Wall -Wextra -Werror your_file.c -L. -lft
-```
-
 ---
 
 ## Resources
 
 - `man` pages for all reimplemented functions (`man strlen`, `man atoi`, etc.)
 - [42 Norm](https://github.com/42School/norminette) — coding standard enforced throughout the project
+
+### AI usage
+
+AI was not used to write any code in this project but was used to clarify some new concepts when the ressources were not find on the internet.
